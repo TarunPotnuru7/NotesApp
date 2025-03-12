@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../utils/axiosInstance';
 import Toast from '../../components/ToastMessages/toast';
 import EmptyCard from '../../components/EmptyCard/EmptyCard'
+import AddNoteImg from '../../../public/images/add-notes.svg'
+import NodDataImg from '../../../public/images/no-data.svg'
 
 const Home = () => {
 
@@ -167,8 +169,9 @@ getUserInfo();
       
       </div>
     </div>:<EmptyCard 
-    imgSrc={isSearch}
-    message={"Start create"}
+    imgSrc={isSearch?NodDataImg: AddNoteImg}
+    message={isSearch? `Oops! No notes found matching your search.` :
+      `Start creating your first note! Click the 'Add' button to jot down your thougts,ideas, and remainders.Let's get started!`}
     />}
     <button className='w-16 h-16 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-600 absolute right-10 bottom-10' 
     onClick={()=>{
