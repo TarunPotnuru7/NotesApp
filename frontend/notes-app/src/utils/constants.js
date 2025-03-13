@@ -1,1 +1,1 @@
-export const BASE_URL='https://notesapp-ihcf.onrender.com'
+export const BASE_URL='http://localhost:8000/'
